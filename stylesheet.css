@@ -140,3 +140,47 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+/* Sticky top menu */
+#topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#topnav a {
+  margin: 0 15px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+#topnav a:hover {
+  color: var(--global-theme-color, #001871);
+}
+
+/* Push main content down so it’s not hidden under the fixed bar */
+body { padding-top: 52px; }
+
+/* Mobile hamburger (optional but looks just like Youngwoon’s) */
+@media (max-width: 720px) {
+  #topnav a { display: none; }
+  #topnav a.menu-icon {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+  }
+  #topnav.responsive a {
+    display: block;
+    margin: 10px 0;
+  }
+}
